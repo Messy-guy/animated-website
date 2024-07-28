@@ -54,6 +54,7 @@ video{
     justify-content: center;
     flex-direction: column;
     text-align: center;
+    z-index: 10;
 }
 
 #page1 h1{
@@ -79,4 +80,63 @@ video{
     font-size:18px;
     font-weight: 400;
     width: 40%;
+}
+#page2{
+    height: 100vh;
+    width: 100%;
+    z-index: 10;
+}
+#cursor{
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 99;
+    background-color: #b3e821;
+}
+#cursorblur{
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 99;
+    background-color: #b2eb151e;
+    filter:blur(30px);
+    z-index: 9;
+}
+
+#scroller{
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    z-index: 10;
+
+}
+#scroller h4{
+    display: inline-block;
+    font-size: 140px;
+    font-family: gilroy;
+    font-weight: 1000;
+    -webkit-text-stroke: 2px #b3e821;
+    margin-right: 10px;
+    color: transparent;
+    transition: all 0.5s linear;
+}
+
+#scroller h4:hover{
+    color: #b3e821;
+}
+
+.scroller-in{
+    white-space: nowrap;
+    display: inline-block;
+    animation: scroll 20s linear infinite;
+}
+@keyframes scroll{
+    from{
+        transform : translateX(0);
+}
+    to{
+        transform: translate(-100%);
+    }
 }
